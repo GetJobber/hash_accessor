@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   
   s.required_rubygems_version = ">= 1.3.6"
   s.platform = Gem::Platform::RUBY
-  s.add_dependency('active_support', '>=3.0')
+  s.add_dependency 'active_support', '>= 2.3.0'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
