@@ -1,7 +1,7 @@
 require File.expand_path("../lib/hash_accessor", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name = "HashAccessor"
+  s.name = "hash_accessor"
   s.version = HashAccessor::VERSION
   s.author = ["Forrest"]
   s.email = ["development@forrestzeisler.com"]
