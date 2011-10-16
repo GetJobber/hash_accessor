@@ -1,8 +1,8 @@
 require File.expand_path("../lib/hash_accessor", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name = "hashAccessor"
-  s.version = hashAccessor::VERSION
+  s.name = "HashAccessor"
+  s.version = HashAccessor::VERSION
   s.author = ["Forrest"]
   s.email = ["development@forrestzeisler.com"]
   s.date = Time.now.utc.strftime("%Y-%m-%d")

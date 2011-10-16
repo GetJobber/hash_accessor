@@ -1,4 +1,4 @@
-module hashAccessor
+module HashAccessor
   module ClassMethods
     #valid options:
     # :default - if undefined, this plugin will create an empty instance of the defined type or null
