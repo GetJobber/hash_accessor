@@ -26,16 +26,29 @@ Here is an example:
     serialized_accessor :options, :currency, :default => "$USD"
     serialized_accessor :options, :display_currency_on_invoices, :type => :boolean, :default => true
     serialized_accessor :options, :invoice_due_date_net, :type => :integer, :default => 3
+    
+    
+    def some_method
+    
+      self.currency = "$CAD"
+      
+      display_currency_on_invoices?
+      
+      ...
+    end
+    
   end
 
 === Valid Options:
 
-:default - if undefined, this plugin will create an empty instance of the defined type or null
-:type - defaults to :string. Can also be :integer, :float, :boolean, or :array
+<code>:default</code> - if undefined, this plugin will create an empty instance of the defined type or null
+
+<code>:type</code> - defaults to :string. Can also be :integer, :float, :boolean, or :array
 
 ==== For Arrays only:
-:collects - only runs on arrays. Calls the lambda method on each item in the array before saving
-:reject_blanks - removes all blank elements after the collect method
+<code>:collects</code> - only runs on arrays. Calls the lambda method on each item in the array before saving
+
+<code>:reject_blanks</code> - removes all blank elements after the collect method
 
 
 
