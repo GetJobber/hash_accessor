@@ -1,14 +1,14 @@
-require File.expand_path("../lib/serialized_accessors.rb", __FILE__)
+require File.expand_path("../lib/hash_accessor", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name = "SerializedAccessors"
-  s.version = SerializedAccessors::VERSION
+  s.name = "hashAccessor"
+  s.version = hashAccessor::VERSION
   s.author = ["Forrest"]
   s.email = ["development@forrestzeisler.com"]
   s.date = Time.now.utc.strftime("%Y-%m-%d")
   
   
-  s.description = 'Provides accessor methods for variable that rest inside a serialized hash.'
+  s.description = 'This gem provides accessor methods to hash keys.'
   s.summary = "This gem provides extended functionality to serialized hashed in rails. It allows you to define accessor methods for variable that rest "+
               "inside a serialized hash. This is very useful if you have a large list of often changing DB variables on a model which don't get queried against."
   

@@ -1,4 +1,4 @@
-module SerializedAccessors
+module hashAccessor
   module ClassMethods
     #valid options:
     # :default - if undefined, this plugin will create an empty instance of the defined type or null
@@ -7,7 +7,7 @@ module SerializedAccessors
     # for arrays only:
     # :collects - only runs on arrays. Calls the lambda method on each item in the array before saving
     # :reject_blanks - removes all blank elements after the collect method
-    def serialized_accessor(hash_name, method_name, options = {})
+    def hash_accessor(hash_name, method_name, options = {})
       method_modifier = ""
       begin
       
@@ -79,7 +79,7 @@ EOS
 
         class_eval str
       rescue Exception => e
-        puts "\n\nError adding serialized_accessor:\n#{e.message}\n#{e.backtrace}\n\n"
+        puts "\n\nError adding hash_accessor:\n#{e.message}\n#{e.backtrace}\n\n"
       end
     
     end

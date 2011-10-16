@@ -1,12 +1,14 @@
-= SerializedAccessors
+= HashAccessor
 
-This gem provides extended functionality to serialized hashed in rails. It allows you to define accessor methods for variable that rest inside a serialized hash. This is very useful if you have a large list of often changing DB variables on a model which don't get queried against. Storing account configurations or custom themes is a common scenario.
+This gem provides accessor methods to hash keys. 
+
+The purpose behind building HashAccessor was to be able to quickly add/modify/remove variables being stored in a serialized hash of a rails model. This is very useful if you have a large list of often changing variables on a model which don't get queried against. You can create new variables without messing up your DB. Storing account configurations or custom themes is a common scenario.
 
 == Installation 
 
 In your <code>Gemfile</code>:
 
-  gem "serialized_accessor"
+  gem "hash_accessor"
 
 Then run:
   
@@ -16,16 +18,16 @@ Then run:
 
 You define each accessor you want to be stored inside the serialized hash
 
-<code>serialized_accessor _NAME_OF_HASH_, _NAME_OF_VARIABLE_, options</code>
+<code>hash_accessor _NAME_OF_HASH_, _NAME_OF_VARIABLE_, options</code>
 
 Here is an example:
 
   class MyModel < ActiveRecord::Base
     serialize :options, Hash
 
-    serialized_accessor :options, :currency, :default => "$USD"
-    serialized_accessor :options, :display_currency_on_invoices, :type => :boolean, :default => true
-    serialized_accessor :options, :invoice_due_date_net, :type => :integer, :default => 3
+    hash_accessor :options, :currency, :default => "$USD"
+    hash_accessor :options, :display_currency_on_invoices, :type => :boolean, :default => true
+    hash_accessor :options, :invoice_due_date_net, :type => :integer, :default => 3
     
     
     def some_method
@@ -54,7 +56,7 @@ Here is an example:
 
 == Contributing & Reporting Issues
 
-While I can't promise the most speedy response, I do plan to continue to maintain this gem. Please feel free to report any issues, provide feedback, or make suggestions on the {Issue Tracker}[http://github.com/forrest/serialized_accessors/issues]
+While I can't promise the most speedy response, I do plan to continue to maintain this gem. Please feel free to report any issues, provide feedback, or make suggestions on the {Issue Tracker}[http://github.com/forrest/hash_accessor/issues]
 
 
 ---

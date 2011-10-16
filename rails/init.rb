@@ -1,2 +1,2 @@
-require File.expand_path('/../lib/serialized_accessors', File.dirname(__FILE__))
+require File.expand_path('/../lib/hash_accessor', File.dirname(__FILE__))
 

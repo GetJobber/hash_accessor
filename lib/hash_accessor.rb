@@ -3,7 +3,7 @@ $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname
 
 require 'railtie' if defined?(Rails)
 
-module SerializedAccessors
+module hashAccessor
   VERSION_NUMBER = "0.0.1"
   
   autoload :ClassMethods, 'class_methods'  
