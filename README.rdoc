@@ -1,8 +1,10 @@
 = HashAccessor
 
-This gem provides accessor methods to hash keys. 
+This gem provides accessor methods to hash keys with enough intelligence to make them useful!
 
-The purpose behind building HashAccessor was to be able to quickly add/modify/remove variables being stored in a serialized hash of a rails model. This is very useful if you have a large list of often changing variables on a model which don't get queried against. You can create new variables without messing up your DB. Storing account configurations or custom themes is a common scenario.
+The purpose behind building HashAccessor was to be able to quickly add/modify/remove variables being stored in a serialized hash of a rails model. This is very useful if you have a large list of often changing variables on a model which don't get queried against. You can create new variables without messing up your DB. Storing account configurations or custom themes is a common scenario. 
+
+This gem was designed to have HTML forms update directly to the hash, but maintain the correct class (respecting :attr_accessible of course). Options like :default, :type, and :collects are particularly helpful when dealing with forms.
 
 == Installation 
 
@@ -50,7 +52,7 @@ Here is an example:
 ==== For Arrays only:
 <code>:collects</code> - only runs on arrays. Calls the lambda method on each item in the array before saving
 
-<code>:reject_blanks</code> - removes all blank elements after the collect method
+<code>:reject_blanks</code> - removes all blank elements after the collect method. This with :collects can be used together for storing a list of ids stored as checkboxes in a form.
 
 
 
