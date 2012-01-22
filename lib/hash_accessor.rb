@@ -4,7 +4,7 @@ $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname
 require 'hash_accessor/railtie' if defined?(Rails)
 
 module HashAccessor
-  VERSION = "1.0.1"
+  VERSION = "1.0.2"
   
   autoload :ClassMethods, 'hash_accessor/class_methods'  
   
