@@ -1,4 +1,6 @@
 require 'active_support/core_ext/object/blank'
+require "bigdecimal"
+require "bigdecimal/util"
 
 module HashAccessor
   module ClassMethods
@@ -17,6 +19,8 @@ module HashAccessor
           method_modifier = "new_val = new_val.to_i"
         elsif options[:type]==:float
           method_modifier = "new_val = new_val.to_f"
+        elsif options[:type]==:decimal
+          method_modifier = "new_val = new_val.to_d"
         elsif options[:type]==:boolean or options[:type]==:bool
           method_modifier = "new_val = (new_val.is_a?(TrueClass) or (new_val.is_a?(String) and (new_val=~/true|1/i).present?) or (new_val.is_a?(Fixnum) and new_val==1))"
         elsif options[:type]==:array

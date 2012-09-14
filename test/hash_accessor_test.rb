@@ -1,4 +1,5 @@
 require 'test/unit'
+
 require File.expand_path("../lib/hash_accessor", File.dirname(__FILE__))
 
 class HashAccessorTest < Test::Unit::TestCase
@@ -9,6 +10,7 @@ class HashAccessorTest < Test::Unit::TestCase
     
     hash_accessor :options, :unspecified_variable
     hash_accessor :options, :test_integer, :type => :integer
+    hash_accessor :options, :test_decimal, :type => :decimal
     hash_accessor :options, :test_bool, :type => :bool
     hash_accessor :options, :test_array_1, :type => :array, :collects => lambda{|item| item.gsub(/li_/, "").to_i }
     hash_accessor :options, :test_array_2, :type => :array, :reject_blanks => true
@@ -31,7 +33,9 @@ class HashAccessorTest < Test::Unit::TestCase
   
   def test_accessors_being_casted_correctly
     @tester.test_integer = "3"
+    @tester.test_decimal = "3"
     assert_equal 3, @tester.test_integer
+    assert_equal 3.to_d, @tester.test_decimal
   end
   
   def test_boolean_question_mark_method_being_added
