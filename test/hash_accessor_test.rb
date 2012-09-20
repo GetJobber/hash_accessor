@@ -33,6 +33,12 @@ class HashAccessorTest < Test::Unit::TestCase
     assert_equal "some test", @tester.unspecified_variable
   end
 
+  def test_no_sharing_of_variables
+    @tester.unspecified_variable = "some test"
+    assert_equal "some test", @tester.unspecified_variable
+    assert TestClassWithHash.new.unspecified_variable.blank?
+  end
+
   def test_accessors_being_casted_correctly
     @tester.test_integer = "3"
     @tester.test_decimal = "3"
