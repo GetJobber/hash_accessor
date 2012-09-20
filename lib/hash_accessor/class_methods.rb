@@ -16,27 +16,26 @@ module HashAccessor
     # :reject_blanks - removes all blank elements after the collect method
     def hash_accessor(hash_name, method_name, options = {})
       begin
-        method_modifier = hash_accessor_method_modifier(method_name, options)
-        default = hash_accessor_default(options)
+        method_name = method_name.to_sym
 
         # Define getter
         define_method(method_name) do
           send("#{hash_name}=", {}) if send(hash_name).blank?
-          if self.send(hash_name)[method_name].nil?
-            self.send(hash_name)[method_name] = default
+          if send(hash_name)[method_name].nil?
+            send(hash_name)[method_name] = hash_accessor_default(options)
           end
-          self.send(hash_name)[method_name]
+          send(hash_name)[method_name]
         end
 
         # Define setter
-        define_method("#{method_name}=") do |*args|
-          new_val = args[0]
-          self.send("#{hash_name}=", {}) if send(hash_name).blank?
+        define_method("#{method_name}=") do |new_val|
+          send("#{hash_name}=", {}) if send(hash_name).blank?
+          method_modifier = hash_accessor_method_modifier(method_name, options)
           new_val = method_modifier.call(new_val)
-          if self.send(hash_name)[method_name] != new_val
+          if send(hash_name)[method_name] != new_val
             instance_variable_set("@#{method_name}_changed", true)
           end
-          self.send(hash_name)[method_name] = new_val
+          send(hash_name)[method_name] = new_val
         end
 
         # Define changed?
@@ -55,47 +54,47 @@ module HashAccessor
         puts "\n\nError adding hash_accessor:\n#{e.message}\n#{e.backtrace}\n\n"
       end
     end
+  end
 
-    private
+  private
 
-    def hash_accessor_method_modifier(method_name, options)
-      case options[:type]
-      when :integer
-        lambda {|new_val| new_val.try(:to_i) }
-      when :float
-        lambda {|new_val| new_val.try(:to_f) }
-      when :decimal
-        lambda {|new_val| new_val.try(:to_d) }
-      when :boolean, :bool
-        lambda {|new_val| (new_val.is_a?(TrueClass) or (new_val.is_a?(String) and (new_val=~/true|1/i).present?) or (new_val.is_a?(Fixnum) and new_val==1)) }
-      when :array
-        lambda {|new_val|
-          new_val = Array.wrap(new_val)
+  def hash_accessor_method_modifier(method_name, options)
+    case options[:type]
+    when :integer
+      lambda {|new_val| new_val.try(:to_i) }
+    when :float
+      lambda {|new_val| new_val.try(:to_f) }
+    when :decimal
+      lambda {|new_val| new_val.try(:to_d) }
+    when :boolean, :bool
+      lambda {|new_val| (new_val.is_a?(TrueClass) or (new_val.is_a?(String) and (new_val=~/true|1/i).present?) or (new_val.is_a?(Fixnum) and new_val==1)) }
+    when :array
+      lambda {|new_val|
+        new_val = Array.wrap(new_val)
 
-          if options[:collects]
-            new_val = new_val.collect(&options[:collects])
-          end
+        if options[:collects]
+          new_val = new_val.collect(&options[:collects])
+        end
 
-          if options[:reject_blanks]
-            new_val.reject!(&:blank?)
-          end
+        if options[:reject_blanks]
+          new_val.reject!(&:blank?)
+        end
 
-          new_val
-        }
-      else lambda {|new_val| new_val}
-      end
+        new_val
+      }
+    else lambda {|new_val| new_val}
     end
+  end
 
-    def hash_accessor_default(options)
-      if options[:default].is_a?(String)
-        default = options[:default]
-      elsif options[:default].nil? and options[:type]==:array
-        default = []
-      elsif options[:default].nil?
-        default = nil
-      else
-        default = options[:default]
-      end
+  def hash_accessor_default(options)
+    if options[:default].is_a?(String)
+      default = options[:default]
+    elsif options[:default].nil? and options[:type]==:array
+      default = []
+    elsif options[:default].nil?
+      default = nil
+    else
+      default = options[:default]
     end
   end
 

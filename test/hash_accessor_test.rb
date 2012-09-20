@@ -34,9 +34,16 @@ class HashAccessorTest < Test::Unit::TestCase
   end
 
   def test_no_sharing_of_variables
-    @tester.unspecified_variable = "some test"
-    assert_equal "some test", @tester.unspecified_variable
-    assert TestClassWithHash.new.unspecified_variable.blank?
+    t1 = TestClassWithHash.new
+    t2 = TestClassWithHash.new
+
+    t1.unspecified_variable = "some test"
+    t1.test_array_2 << :blah
+
+    assert_equal "some test", t1.unspecified_variable
+    assert_equal [:blah], t1.test_array_2
+    assert_equal nil, t2.unspecified_variable
+    assert_equal [], t2.test_array_2
   end
 
   def test_accessors_being_casted_correctly
