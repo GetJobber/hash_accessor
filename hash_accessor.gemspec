@@ -3,13 +3,12 @@ require File.expand_path("../lib/hash_accessor", __FILE__)
 Gem::Specification.new do |s|
   s.name = "hash_accessor"
   s.version = HashAccessor::VERSION
-  s.author = ["Forrest"]
-  s.email = ["development@forrestzeisler.com"]
+  s.author = ["Jobber", "Forrest Zeisler"]
+  s.email = ["forrest@getjobber.com"]
   s.date = Time.now.utc.strftime("%Y-%m-%d")
 
-
   s.description = 'This gem provides accessor methods to hash keys.'
-  s.summary = "This gem provides extended functionality to serialized hashed in rails. It allows you to define accessor methods for variable that rest "+
+  s.summary = "This gem provides extended functionality to serialized hashed in rails similary to rails' active_attr. It allows you to define accessor methods for variable that rest "+
               "inside a serialized hash. This is very useful if you have a large list of often changing DB variables on a model which don't get queried against."
 
   s.required_rubygems_version = ">= 1.3.6"
