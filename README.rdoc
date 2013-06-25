@@ -66,4 +66,4 @@ While I can't promise the most speedy response, I do plan to continue to maintai
 ---
 
 
-Copyright on Updates - Copyright (c) 2011 OctopusApp Inc. ({getjobber.com}[http://getjobber.com]), released under the MIT license
+Copyright (c) 2013 OctopusApp Inc. ({getjobber.com}[http://getjobber.com]), released under the MIT license
