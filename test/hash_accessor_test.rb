@@ -1,6 +1,6 @@
 require_relative "test_helper"
 
-class HashAccessorTest < Minitest::Test
+class HashAccessorTest < MiniTest::Unit::TestCase
 
   class TestClassWithHash
     include HashAccessor

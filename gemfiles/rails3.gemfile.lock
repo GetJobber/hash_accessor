@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: /Users/nathany/Dropbox/Development/jobber/hash_accessor
   specs:
     hash_accessor (1.0.5)
       activesupport (>= 3.2.0)
@@ -22,6 +22,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (= 3.2.13)
   appraisal
   bundler (~> 1.3)
   hash_accessor!

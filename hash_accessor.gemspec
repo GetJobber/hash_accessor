@@ -15,9 +15,10 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
 
   s.add_dependency "activesupport", ">= 3.2.0"
-  s.add_development_dependency "minitest", ">= 5.0.0"
+  s.add_development_dependency "minitest", "~> 4.0"
   s.add_development_dependency "bundler", "~> 1.3"
   s.add_development_dependency "rake"
+  s.add_development_dependency "appraisal"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
