@@ -1,8 +1,6 @@
-require 'test/unit'
+require_relative "test_helper"
 
-require File.expand_path("../lib/hash_accessor", File.dirname(__FILE__))
-
-class HashAccessorTest < Test::Unit::TestCase
+class HashAccessorTest < Minitest::Test
 
   class TestClassWithHash
     include HashAccessor
@@ -13,7 +11,7 @@ class HashAccessorTest < Test::Unit::TestCase
     hash_accessor :options, :test_decimal, :type => :decimal
     hash_accessor :options, :test_bool, :type => :bool
     hash_accessor :options, :test_array_1, :type => :array, :collects => lambda{|item|
-      item.gsub(/li_/, "").to_i 
+      item.gsub(/li_/, "").to_i
     }
     hash_accessor :options, :test_array_2, :type => :array, :reject_blanks => true
 
