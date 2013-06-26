@@ -1,6 +1,6 @@
 = HashAccessor
 
-{<img src="https://travis-ci.org/GetJobber/hash_accessor.png?branch=master" alt="Build Status" />}[https://travis-ci.org/GetJobber/hash_accessor] {<img src="https://gemnasium.com/GetJobber/hash_accessor.png" alt="Dependency Status" />}[https://gemnasium.com/GetJobber/hash_accessor]
+{<img src="https://travis-ci.org/GetJobber/hash_accessor.png?branch=master" alt="Build Status" />}[https://travis-ci.org/GetJobber/hash_accessor] {<img src="https://codeclimate.com/github/GetJobber/hash_accessor.png" />}[https://codeclimate.com/github/GetJobber/hash_accessor] {<img src="https://gemnasium.com/GetJobber/hash_accessor.png" alt="Dependency Status" />}[https://gemnasium.com/GetJobber/hash_accessor]
 
 This gem provides similar functionality to Rails' new ActiveAttr, except with a bunch of powerful methods behind it. Type definitions, defaults, lambdas on arrays, and more.
 
