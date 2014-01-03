@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.email = ["forrest@getjobber.com"]
   s.date = Time.now.utc.strftime("%Y-%m-%d")
 
-  s.description = 'This gem provides accessor methods to hash keys.'
+  s.description = "This gem provides accessor methods to hash keys."
   s.summary = "This gem provides extended functionality to serialized hashed in rails similary to rails' active_attr. It allows you to define accessor methods for variable that rest "+
               "inside a serialized hash. This is very useful if you have a large list of often changing DB variables on a model which don't get queried against."
 
@@ -15,10 +15,9 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
 
   s.add_dependency "activesupport", ">= 3.2.0"
-  s.add_development_dependency "minitest", "~> 4.0"
-  s.add_development_dependency "bundler", "~> 1.3"
+  s.add_development_dependency "minitest", ">= 4.0"
+  s.add_development_dependency "bundler", ">= 1.3"
   s.add_development_dependency "rake"
-  s.add_development_dependency "appraisal"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
