@@ -1,10 +1,9 @@
 language: ruby
-before_install: gem install bundler -v 1.5.1
 script: bundle exec rake
 rvm:
   - 1.9.3
   - 2.0.0
-  - 2.1.0
+  - 2.1.5
   - jruby-19mode
 gemfile:
   - test/gemfiles/Gemfile.rails-3.2.x

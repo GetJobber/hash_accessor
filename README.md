@@ -1,6 +1,6 @@
 # HashAccessor
 
-[![Build Status](https://travis-ci.org/GetJobber/hash_accessor.png?branch=testing)](https://travis-ci.org/GetJobber/hash_accessor) [![Code Climate](https://codeclimate.com/github/GetJobber/hash_accessor.png)](https://codeclimate.com/github/GetJobber/hash_accessor)
+[![Build Status](https://travis-ci.org/GetJobber/hash_accessor.png?branch=testing)](https://travis-ci.org/GetJobber/hash_accessor) [![Coverage Status](https://img.shields.io/coveralls/GetJobber/hash_accessor.svg)](https://coveralls.io/r/GetJobber/hash_accessor) [![Code Climate](https://codeclimate.com/github/GetJobber/hash_accessor.png)](https://codeclimate.com/github/GetJobber/hash_accessor)
 
 This gem provides similar functionality to Rails' new ActiveAttr, except with a bunch of powerful methods behind it. Type definitions, defaults, lambdas on arrays, and more.
 
