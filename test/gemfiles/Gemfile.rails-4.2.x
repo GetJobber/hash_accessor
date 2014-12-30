@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 gemspec :path => "./../.."
 
-gem "activesupport", "~> 3.2.21"
+gem "activesupport", "~> 4.2.0"
 gem 'coveralls', :require => false
