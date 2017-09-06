@@ -81,4 +81,4 @@ BUNDLE_GEMFILE=test/gemfiles/Gemfile.rails-3.2.x bundle exec rake test
 ---
 
 
-Copyright (c) 2014 OctopusApp Inc. ([getjobber.com](http://getjobber.com)), released under the MIT license
+Copyright (c) 2014-2017 OctopusApp Inc. ([getjobber.com](http://getjobber.com)), released under the MIT license
