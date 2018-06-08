@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.platform = Gem::Platform::RUBY
 
-  s.add_dependency "activesupport", ">= 3.2.0"
+  s.add_dependency "activesupport", ">= 4.2.9"
   s.add_development_dependency "minitest", ">= 4.0"
   s.add_development_dependency "bundler", ">= 1.3"
   s.add_development_dependency "rake"

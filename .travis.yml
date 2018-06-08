@@ -8,14 +8,9 @@ rvm:
   - 2.2.0
   - jruby-19mode
 gemfile:
-  - test/gemfiles/Gemfile.rails-3.2.x
-  - test/gemfiles/Gemfile.rails-4.0.x
-  - test/gemfiles/Gemfile.rails-4.1.x
   - test/gemfiles/Gemfile.rails-4.2.x
 matrix:
   exclude:
-    - rvm: 1.9.3
-      gemfile: spec/gemfiles/rails-4.1.x.gemfile
     - rvm: 1.9.3
       gemfile: spec/gemfiles/rails-4.2.x.gemfile
   fast_finish: true

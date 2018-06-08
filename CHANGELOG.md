@@ -1,3 +1,7 @@
+# 1.0.6 / 2018-6-12
+
+* Update activesupport to 4.2.9
+
 # 1.0.5 / 2012-9-20
 
 * [BUGFIX] don't share variables between instances
