@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/hash_accessor
+    parallelism: 1
+    docker:
+      - image: circleci/ruby:2.3.4
+        environment:
+          - CI: 1
+
+    steps:
+      - checkout
+      - add_ssh_keys
+
+      # run tests for rails 4.2
+      - run:
+          name: Install gems (4.2)
+          environment:
+            BUNDLE_GEMFILE: test/gemfiles/Gemfile.rails-4.2.x
+          command: bundle install
+      - run:
+          name: Run tests (4.2)
+          environment:
+            BUNDLE_GEMFILE: test/gemfiles/Gemfile.rails-4.2.x
+          command: |
+            bundle exec rake test
