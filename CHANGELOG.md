@@ -1,3 +1,7 @@
+# 1.0.7 / 2018-7-27
+
+* support Rails 5.2
+
 # 1.0.6 / 2018-6-12
 
 * Update activesupport to 4.2.9

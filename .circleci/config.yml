@@ -24,3 +24,16 @@ jobs:
             BUNDLE_GEMFILE: test/gemfiles/Gemfile.rails-4.2.x
           command: |
             bundle exec rake test
+
+      # run tests for rails 5.2
+      - run:
+          name: Install gems (5.2)
+          environment:
+            BUNDLE_GEMFILE: test/gemfiles/Gemfile.rails-5.2.x
+          command: bundle install
+      - run:
+          name: Run tests (5.2)
+          environment:
+            BUNDLE_GEMFILE: test/gemfiles/Gemfile.rails-5.2.x
+          command: |
+            bundle exec rake test
