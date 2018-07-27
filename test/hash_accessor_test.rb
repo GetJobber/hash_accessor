@@ -1,6 +1,6 @@
 require_relative "test_helper"
 
-class HashAccessorTest < MiniTest::Unit::TestCase
+class HashAccessorTest < MiniTest::Test
 
   class TestClassWithHash
     include HashAccessor
@@ -40,7 +40,7 @@ class HashAccessorTest < MiniTest::Unit::TestCase
 
     assert_equal "some test", t1.unspecified_variable
     assert_equal [:blah], t1.test_array_2
-    assert_equal nil, t2.unspecified_variable
+    assert_nil t2.unspecified_variable
     assert_equal [], t2.test_array_2
   end
 
