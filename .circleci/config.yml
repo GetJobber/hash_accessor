@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/hash_accessor
     parallelism: 1
     docker:
-      - image: circleci/ruby:2.3.4
+      - image: circleci/ruby:2.4.5
         environment:
           - CI: 1
 
