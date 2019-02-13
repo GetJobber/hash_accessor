@@ -51,6 +51,27 @@ class HashAccessorTest < MiniTest::Test
     assert_equal 3.to_d, @tester.test_decimal
   end
 
+  def test_boolean_accessor_cast_from_int
+    @tester.test_bool = 1
+    assert_equal true, @tester.test_bool
+    @tester.test_bool = 0
+    assert_equal false, @tester.test_bool
+  end
+
+  def test_boolean_accessor_cast_from_bool
+    @tester.test_bool = true
+    assert_equal true, @tester.test_bool
+    @tester.test_bool = false
+    assert_equal false, @tester.test_bool
+  end
+
+  def test_boolean_accessor_cast_from_string
+    @tester.test_bool = 'true'
+    assert_equal true, @tester.test_bool
+    @tester.test_bool = 'false'
+    assert_equal false, @tester.test_bool
+  end
+
   def test_boolean_question_mark_method_being_added
     assert !@tester.test_bool?
     @tester.test_bool = true
