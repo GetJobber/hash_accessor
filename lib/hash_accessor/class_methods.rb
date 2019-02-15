@@ -67,7 +67,7 @@ module HashAccessor
     when :decimal
       lambda {|new_val| new_val.try(:to_d) }
     when :boolean, :bool
-      lambda {|new_val| (new_val.is_a?(TrueClass) or (new_val.is_a?(String) and (new_val=~/true|1/i).present?) or (new_val.is_a?(Fixnum) and new_val==1)) }
+      lambda {|new_val| (new_val.is_a?(TrueClass) or (new_val.is_a?(String) and (new_val=~/true|1/i).present?) or (new_val.is_a?(Integer) and new_val==1)) }
     when :array
       lambda {|new_val|
         new_val = Array.wrap(new_val)

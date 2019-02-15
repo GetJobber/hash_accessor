@@ -1,3 +1,8 @@
+# 1.0.8 / 2019-2-13
+
+* remove deprecation warning in Ruby 2.4.
+* mark gem as deprecated
+
 # 1.0.7 / 2018-7-27
 
 * support Rails 5.2
